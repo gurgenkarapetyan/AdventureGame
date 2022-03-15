@@ -18,6 +18,11 @@ ADamageArea::ADamageArea()
 	MeshComponent->SetupAttachment(DamageBoxComponent);
 }
 
+void ADamageArea::OnBeginOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	
+}
+
 void ADamageArea::BeginPlay()
 {
 	Super::BeginPlay();
@@ -28,10 +33,5 @@ void ADamageArea::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
-
-void ADamageArea::OnBeginOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	
 }
 

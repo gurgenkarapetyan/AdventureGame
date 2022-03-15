@@ -4,12 +4,13 @@
     <projectFile>Intermediate/ProjectFiles/Adventure.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="96e26715-c32f-4ba5-998e-b07430ce0a30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adventure.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Adventure.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Adventure/DamageArea.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/DamageArea.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="C++ Project.Adventure">
@@ -254,7 +259,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647338689293</updated>
       <workItem from="1647338695139" duration="1000" />
-      <workItem from="1647340402803" duration="603000" />
+      <workItem from="1647340402803" duration="2229000" />
     </task>
     <servers />
   </component>
