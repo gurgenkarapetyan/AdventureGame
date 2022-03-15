@@ -42,21 +42,60 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	check(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis("Forward", this, &APlayerCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Right", this, &APlayerCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Yaw", this, &APlayerCharacter::Yaw);
+	PlayerInputComponent->BindAxis("Pitch", this, &APlayerCharacter::Pitch);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &APlayerCharacter::Jump);
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APlayerCharacter::OnAttack);
 }
 
 void APlayerCharacter::MoveForward(float Amount)
 {
+	if (Controller && Amount)
+	{
+		bIsWalking = true;
+
+		FVector ForwardVector = GetActorForwardVector();
+		AddMovementInput(ForwardVector, Amount);
+	}
+
+	if (Amount == 0)
+	{
+		bIsWalking = false;
+	}
 }
 
 void APlayerCharacter::MoveRight(float Amount)
 {
+	if (Controller && Amount)
+	{
+		bIsWalking = true;
+
+		FVector RightVector = GetActorRightVector();
+		AddMovementInput(RightVector, Amount);
+	}
+
+	if (Amount == 0)
+	{
+		bIsWalking = false;
+	}
 }
 
 void APlayerCharacter::Yaw(float Amount)
 {
+	AddControllerYawInput(200.f * Amount * GetWorld()->GetDeltaSeconds());
 }
 
 void APlayerCharacter::Pitch(float Amount)
+{
+	AddControllerPitchInput(200.f * Amount * GetWorld()->GetDeltaSeconds());
+}
+
+void APlayerCharacter::OnAttack()
 {
 }
 
@@ -64,10 +103,5 @@ void APlayerCharacter::Pitch(float Amount)
 float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
-}
-
-
-void APlayerCharacter::OnAttack()
-{
 }
 
