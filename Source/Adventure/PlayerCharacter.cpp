@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "PlayerCharacter.h"
+#include "Bullet.h"
 #include "Components/CapsuleComponent.h"
 
 APlayerCharacter::APlayerCharacter()
@@ -10,6 +10,7 @@ APlayerCharacter::APlayerCharacter()
 	
 	AttackTimeout = 1.5;
 	TimeSinceLastStrike = 0.f;
+	BulletLaunchImpulse = 5000.0f;
 	bCanAttack = true;
 	bAttackStarted = false;
 
@@ -36,6 +37,13 @@ void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	TimeSinceLastStrike += DeltaTime;
+
+	if (TimeSinceLastStrike > AttackTimeout && !bCanAttack)
+	{
+		bCanAttack = true;
+		TimeSinceLastStrike = 0.f;
+	}
 }
 
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -90,6 +98,22 @@ void APlayerCharacter::Pitch(float Amount)
 
 void APlayerCharacter::OnAttack()
 {
+	bAttackStarted = true;
+	if (bCanAttack)
+	{
+		const FVector ForwardVector = GetActorForwardVector();
+		FVector Nozzle = GetMesh()->GetBoneLocation("ArmR3");
+
+		Nozzle += ForwardVector * 55.f;
+
+		ABullet* Bullet = GetWorld()->SpawnActor<ABullet>(BP_FireBall, Nozzle, RootComponent->GetComponentRotation());
+		bCanAttack = false;
+
+		if (Bullet)
+		{
+			Bullet->GetCollisionSphere()->AddImpulse(ForwardVector * BulletLaunchImpulse);
+		}
+	}
 }
 
 

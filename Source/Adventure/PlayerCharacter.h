@@ -57,10 +57,18 @@ private:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))
 	float TimeSinceLastStrike;
+
+	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
+	float BulletLaunchImpulse;
 	
 	UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	int Score;
 	
 	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
 	UCapsuleComponent* TriggerCapsule;
+
+	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
+	UClass* BP_FireBall;
+
+	
 };
