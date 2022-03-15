@@ -8,10 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e26715-c32f-4ba5-998e-b07430ce0a30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="96e26715-c32f-4ba5-998e-b07430ce0a30" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +256,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647338689293</updated>
       <workItem from="1647338695139" duration="1000" />
-      <workItem from="1647340402803" duration="2706000" />
+      <workItem from="1647340402803" duration="3390000" />
     </task>
     <servers />
   </component>

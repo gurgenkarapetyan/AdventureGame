@@ -73,15 +73,8 @@ void APlayerCharacter::MoveRight(float Amount)
 {
 	if (Controller && Amount)
 	{
-		bIsWalking = true;
-
 		FVector RightVector = GetActorRightVector();
 		AddMovementInput(RightVector, Amount);
-	}
-
-	if (Amount == 0)
-	{
-		bIsWalking = false;
 	}
 }
 
