@@ -6,21 +6,25 @@
 #include "GameFramework/Actor.h"
 #include "PickupItem.generated.h"
 
+class USphereComponent;
+
 UCLASS()
 class ADVENTURE_API APickupItem : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	APickupItem();
 
+	virtual void Tick(float DeltaTime) override;
+	
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
+	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
+	USphereComponent* CollisionSphere;
 
+	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
+	UStaticMeshComponent* MeshComponent;
 };

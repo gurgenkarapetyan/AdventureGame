@@ -3,22 +3,25 @@
 
 #include "PickupItem.h"
 
-// Sets default values
+#include "Components/SphereComponent.h"
+
 APickupItem::APickupItem()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh Component"));
+	RootComponent = MeshComponent;
+	
+	CollisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("Collision Sphere"));
+	CollisionSphere->SetupAttachment(MeshComponent);
 }
 
-// Called when the game starts or when spawned
 void APickupItem::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void APickupItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

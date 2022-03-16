@@ -39,6 +39,4 @@ private:
 	bool bIsActivatable;
 
 	bool bActivated;
-
-	
 };
