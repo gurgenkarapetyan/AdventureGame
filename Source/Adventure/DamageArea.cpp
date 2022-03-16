@@ -20,7 +20,7 @@ ADamageArea::ADamageArea()
 
 void ADamageArea::OnBeginOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	
+	OtherActor->TakeDamage(Damage, FDamageEvent(), NULL, this);
 }
 
 void ADamageArea::BeginPlay()

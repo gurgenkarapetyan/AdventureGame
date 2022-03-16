@@ -49,7 +49,7 @@ private:
 
 	bool bCanAttack;
 	
-	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess="true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
 	float HealthPower;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess="true"))

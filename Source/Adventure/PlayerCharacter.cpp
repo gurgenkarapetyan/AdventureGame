@@ -4,6 +4,7 @@
 #include "Bullet.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "PickupItem.h"
 
 APlayerCharacter::APlayerCharacter()
 {
@@ -25,7 +26,20 @@ APlayerCharacter::APlayerCharacter()
 
 void APlayerCharacter::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	
+	if (Cast<APickupItem>(OtherActor))
+	{
+		if (OtherActor->ActorHasTag("Key"))
+		{
+			Score += 300;
+			BHasKey = true;
+		}
+		else
+		{
+			Score += 100;
+		}
+		
+		OtherActor->Destroy();
+	}
 }
 
 void APlayerCharacter::BeginPlay()
