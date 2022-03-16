@@ -10,9 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96e26715-c32f-4ba5-998e-b07430ce0a30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/MovingPlatform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/MovingPlatform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/PickupItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/PickupItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/PickupItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/PickupItem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +260,7 @@
       <updated>1647338689293</updated>
       <workItem from="1647338695139" duration="1000" />
       <workItem from="1647340402803" duration="7605000" />
-      <workItem from="1647402993839" duration="7832000" />
+      <workItem from="1647402993839" duration="8682000" />
     </task>
     <servers />
   </component>
