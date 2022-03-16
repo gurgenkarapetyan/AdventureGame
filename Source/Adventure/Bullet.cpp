@@ -24,7 +24,7 @@ void ABullet::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor, U
 {
 	if (OtherComp != OtherActor->GetRootComponent())
 	{
-		return;
+		return; 
 	}
 	
 	OtherActor->TakeDamage(Damage, FDamageEvent(), NULL, this);

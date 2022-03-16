@@ -10,10 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="96e26715-c32f-4ba5-998e-b07430ce0a30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Adventure/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/EnemyAnim.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/EnemyAnim.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Adventure/Bullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Adventure/Bullet.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -262,16 +261,18 @@
       <option name="presentableId" value="Default" />
       <updated>1647338689293</updated>
       <workItem from="1647338695139" duration="1000" />
-      <workItem from="1647340402803" duration="5737000" />
+      <workItem from="1647340402803" duration="7605000" />
+      <workItem from="1647402993839" duration="3475000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
