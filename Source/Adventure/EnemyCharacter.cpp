@@ -14,7 +14,7 @@ AEnemyCharacter::AEnemyCharacter()
 
 	Speed = 20.f;
 	Health = 100.f;
-	AttackTimeout = 1.5f;
+	AttackTimeout = 1.f;
 	TimeSinceLastAttack = 0.f;
 	BulletLaunchInput = 2000.f;
 
@@ -78,9 +78,39 @@ void AEnemyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 }
 
+float AEnemyCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	Health -= DamageAmount;
+
+	if (Health <= 0) {
+	
+		bIsDead = true;
+
+	}
+
+	return 0.0f;
+}
+
 void AEnemyCharacter::Attack(AActor* AttackTarget)
 {
-	UE_LOG(LogTemp, Warning, TEXT("ENEMY IS ATTACKING THE PLAYER"));
+	if (BP_Bullet)
+	{
+		bIsAttacking = true;
+
+		const FVector ForwardVector = GetActorForwardVector();
+		FVector Nozzle = GetMesh()->GetBoneLocation("Neck1");
+
+		Nozzle += ForwardVector * 55;
+
+		FVector ToOpponent = AttackTarget->GetActorLocation() - Nozzle;
+		ToOpponent.Normalize();
+
+		ABullet* Arrow = GetWorld()->SpawnActor<ABullet>(BP_Bullet, Nozzle, RootComponent->GetComponentRotation());
+		if (Arrow)
+		{
+			Arrow->GetCollisionSphere()->AddImpulse(ForwardVector * BulletLaunchInput);
+		}
+	}
 }
 
 bool AEnemyCharacter::IsInAttackRange(const float Distance)

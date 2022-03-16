@@ -3,6 +3,7 @@
 #include "PlayerCharacter.h"
 #include "Bullet.h"
 #include "Components/CapsuleComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 APlayerCharacter::APlayerCharacter()
 {
@@ -119,6 +120,17 @@ void APlayerCharacter::OnAttack()
 
 float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	HealthPower -= DamageAmount;
+
+	if (HealthPower <= 0)
+	{
+		HealthPower = 0;
+		bDead = true;
+
+		// UGameplayStatics::OpenLevel(this, FName(GetWorld()->GetName()), false);
+	}
+	UE_LOG(LogTemp, Warning, TEXT("TAKE DAMAGE"));
+
+	return DamageAmount;
 }
 
